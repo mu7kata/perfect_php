@@ -5,3 +5,15 @@
 [03-Jan-2021 22:10:53 Asia/Tokyo] PHP Notice:  Array to string conversion in /Applications/MAMP/htdocs/study_localhost/hello.php on line 20
 [03-Jan-2021 22:10:54 Asia/Tokyo] PHP Notice:  Array to string conversion in /Applications/MAMP/htdocs/study_localhost/hello.php on line 20
 [03-Jan-2021 22:31:34 Asia/Tokyo] PHP Notice:  Undefined variable: ov in /Applications/MAMP/htdocs/study_localhost/hello.php on line 31
+[03-Jan-2021 23:43:18 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /Applications/MAMP/htdocs/study_localhost/hello.php on line 30
+[03-Jan-2021 23:45:30 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /Applications/MAMP/htdocs/study_localhost/hello.php on line 33
+[03-Jan-2021 23:45:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /Applications/MAMP/htdocs/study_localhost/hello.php on line 33
+[03-Jan-2021 23:46:28 Asia/Tokyo] PHP Notice:  Undefined variable: test in /Applications/MAMP/htdocs/study_localhost/hello.php on line 30
+[03-Jan-2021 23:46:42 Asia/Tokyo] PHP Notice:  Undefined variable: test in /Applications/MAMP/htdocs/study_localhost/hello.php on line 30
+[03-Jan-2021 23:47:13 Asia/Tokyo] PHP Notice:  Undefined variable: test in /Applications/MAMP/htdocs/study_localhost/hello.php on line 30
+[03-Jan-2021 23:47:23 Asia/Tokyo] PHP Notice:  Undefined variable: test in /Applications/MAMP/htdocs/study_localhost/hello.php on line 30
+[03-Jan-2021 23:47:28 Asia/Tokyo] PHP Notice:  Undefined variable: test in /Applications/MAMP/htdocs/study_localhost/hello.php on line 30
+[03-Jan-2021 23:47:29 Asia/Tokyo] PHP Notice:  Undefined variable: test in /Applications/MAMP/htdocs/study_localhost/hello.php on line 29
+[04-Jan-2021 00:27:49 Asia/Tokyo] PHP Notice:  Undefined variable: test in /Applications/MAMP/htdocs/study_localhost/hello.php on line 30
+[04-Jan-2021 00:44:52 Asia/Tokyo] PHP Notice:  Undefined offset: 4 in /Applications/MAMP/htdocs/study_localhost/hello.php on line 22
+[04-Jan-2021 00:44:53 Asia/Tokyo] PHP Notice:  Undefined offset: 4 in /Applications/MAMP/htdocs/study_localhost/hello.php on line 22
