@@ -40,6 +40,9 @@ function dbConnect()
 }
 debug('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始');
 
+$errors=array();
+
+debug('$errors'.print_r($errors,true));
 session_start();
 
 function queryPost($dbh, $sql, $data)
@@ -56,24 +59,34 @@ function queryPost($dbh, $sql, $data)
   return $stmt;
 }
 
-$comment=$_POST['comment'];
-debug('commentのなかみ'.print_r($comment,true));
 
-if(!empty($_POST)){
-$dbh = dbConnect();
-$sql = 'INSERT INTO `post`(name,comment,created_at)VALUES(:name,:comment,:created_at)';
-$data = array( 
-  ':name'=>$_POST['name'],
-  ':comment'=>$_POST['comment'],
-  ':created_at'=>date('Y-m-d-H-i'));
-$stmt = queryPost($dbh, $sql, $data);
 
-if ($stmt) {
-  debug('成功');
-} else {
-  debug('失敗');
-  return false;
+if(!isset($_POST['name'])||!strlen($_POST['name'])){
+  debug('$errors'.print_r($errors,true));
+  $errors['name']='一言入力してください';
+}else if(strlen($_POST['name'])>2){
+  $errors['name']='2文字いない入力してください';
 }
+
+
+if(count($errors)===0){
+
+  if(!empty($_POST)){
+  $dbh = dbConnect();
+  $sql = 'INSERT INTO `post`(name,comment,created_at)VALUES(:name,:comment,:created_at)';
+  $data = array( 
+    ':name'=>$_POST['name'],
+    ':comment'=>$_POST['comment'],
+    ':created_at'=>date('Y-m-d-H-i'));
+  $stmt = queryPost($dbh, $sql, $data);
+  
+  if ($stmt) {
+    debug('成功');
+  } else {
+    debug('失敗');
+    return false;
+  }
+  }
 }
 
 ?>
@@ -90,6 +103,7 @@ if ($stmt) {
   <h1>ひとこと掲示板</h1>
 
   <form action="bbs.php" method=post>
+  <p><?php echo $errors['name'];?></p>
     名前：<input type="text" name='name'><br />
     ひとこと：<input type="text" name='comment' size="60"><br />
     <input type="submit" value="送信"><br />

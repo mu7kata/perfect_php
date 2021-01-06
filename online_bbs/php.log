@@ -126,3 +126,103 @@ Stack trace:
 [06-Jan-2021 22:41:28 Asia/Tokyo] デバッグ：DBへの命令結果を反映
 [06-Jan-2021 22:41:28 Asia/Tokyo] デバッグ：クエリ成功
 [06-Jan-2021 22:41:28 Asia/Tokyo] デバッグ：成功
+[06-Jan-2021 23:44:55 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:44:55 Asia/Tokyo] PHP Notice:  Undefined variable: error in /Applications/MAMP/htdocs/study_localhost/online_bbs/bbs.php on line 98
+[06-Jan-2021 23:45:01 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:45:01 Asia/Tokyo] PHP Notice:  Undefined variable: error in /Applications/MAMP/htdocs/study_localhost/online_bbs/bbs.php on line 98
+[06-Jan-2021 23:46:01 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:46:04 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:46:08 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:46:39 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:46:46 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:47:50 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:47:56 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:48:57 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:49:01 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:49:20 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:49:20 Asia/Tokyo] PHP Notice:  Undefined index: name in /Applications/MAMP/htdocs/study_localhost/online_bbs/bbs.php on line 62
+[06-Jan-2021 23:50:17 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:50:17 Asia/Tokyo] PHP Notice:  Array to string conversion in /Applications/MAMP/htdocs/study_localhost/online_bbs/bbs.php on line 11
+[06-Jan-2021 23:50:17 Asia/Tokyo] デバッグ：Array
+[06-Jan-2021 23:50:17 Asia/Tokyo] PHP Notice:  Undefined index: name in /Applications/MAMP/htdocs/study_localhost/online_bbs/bbs.php on line 64
+[06-Jan-2021 23:50:48 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:50:48 Asia/Tokyo] PHP Notice:  Array to string conversion in /Applications/MAMP/htdocs/study_localhost/online_bbs/bbs.php on line 11
+[06-Jan-2021 23:50:48 Asia/Tokyo] デバッグ：Array
+[06-Jan-2021 23:52:10 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:52:10 Asia/Tokyo] デバッグ：$errorsArray
+(
+)
+
+[06-Jan-2021 23:52:35 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:52:35 Asia/Tokyo] デバッグ：$errorsArray
+(
+)
+
+[06-Jan-2021 23:53:23 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:53:23 Asia/Tokyo] デバッグ：$errorsArray
+(
+)
+
+[06-Jan-2021 23:53:23 Asia/Tokyo] デバッグ：$errorsArray
+(
+)
+
+[06-Jan-2021 23:53:24 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:53:24 Asia/Tokyo] デバッグ：$errorsArray
+(
+)
+
+[06-Jan-2021 23:53:24 Asia/Tokyo] デバッグ：$errorsArray
+(
+)
+
+[06-Jan-2021 23:56:28 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:56:28 Asia/Tokyo] デバッグ：$errorsArray
+(
+)
+
+[06-Jan-2021 23:56:28 Asia/Tokyo] デバッグ：$errorsArray
+(
+)
+
+[06-Jan-2021 23:56:36 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:56:36 Asia/Tokyo] デバッグ：$errorsArray
+(
+)
+
+[06-Jan-2021 23:56:36 Asia/Tokyo] デバッグ：DBへの命令結果を反映
+[06-Jan-2021 23:56:36 Asia/Tokyo] デバッグ：クエリ成功
+[06-Jan-2021 23:56:36 Asia/Tokyo] デバッグ：成功
+[06-Jan-2021 23:56:36 Asia/Tokyo] PHP Notice:  Undefined index: name in /Applications/MAMP/htdocs/study_localhost/online_bbs/bbs.php on line 106
+[06-Jan-2021 23:56:52 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:56:52 Asia/Tokyo] デバッグ：$errorsArray
+(
+)
+
+[06-Jan-2021 23:56:52 Asia/Tokyo] デバッグ：$errorsArray
+(
+)
+
+[06-Jan-2021 23:57:01 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:57:01 Asia/Tokyo] デバッグ：$errorsArray
+(
+)
+
+[06-Jan-2021 23:57:01 Asia/Tokyo] デバッグ：$errorsArray
+(
+)
+
+[06-Jan-2021 23:58:24 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:58:24 Asia/Tokyo] デバッグ：$errorsArray
+(
+)
+
+[06-Jan-2021 23:58:24 Asia/Tokyo] デバッグ：$errorsArray
+(
+)
+
+[06-Jan-2021 23:58:29 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 23:58:29 Asia/Tokyo] デバッグ：$errorsArray
+(
+)
+
