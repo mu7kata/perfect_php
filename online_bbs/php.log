@@ -1,0 +1,128 @@
+[03-Jan-2021 21:23:37 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[03-Jan-2021 21:23:59 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[03-Jan-2021 21:24:14 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[03-Jan-2021 21:24:14 Asia/Tokyo] PHP Notice:  Undefined variable: sasa in /Applications/MAMP/htdocs/study_localhost/hello.php on line 17
+[03-Jan-2021 22:10:53 Asia/Tokyo] PHP Notice:  Array to string conversion in /Applications/MAMP/htdocs/study_localhost/hello.php on line 20
+[03-Jan-2021 22:10:54 Asia/Tokyo] PHP Notice:  Array to string conversion in /Applications/MAMP/htdocs/study_localhost/hello.php on line 20
+[03-Jan-2021 22:31:34 Asia/Tokyo] PHP Notice:  Undefined variable: ov in /Applications/MAMP/htdocs/study_localhost/hello.php on line 31
+[03-Jan-2021 23:43:18 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /Applications/MAMP/htdocs/study_localhost/hello.php on line 30
+[03-Jan-2021 23:45:30 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /Applications/MAMP/htdocs/study_localhost/hello.php on line 33
+[03-Jan-2021 23:45:36 Asia/Tokyo] PHP Warning:  Invalid argument supplied for foreach() in /Applications/MAMP/htdocs/study_localhost/hello.php on line 33
+[03-Jan-2021 23:46:28 Asia/Tokyo] PHP Notice:  Undefined variable: test in /Applications/MAMP/htdocs/study_localhost/hello.php on line 30
+[03-Jan-2021 23:46:42 Asia/Tokyo] PHP Notice:  Undefined variable: test in /Applications/MAMP/htdocs/study_localhost/hello.php on line 30
+[03-Jan-2021 23:47:13 Asia/Tokyo] PHP Notice:  Undefined variable: test in /Applications/MAMP/htdocs/study_localhost/hello.php on line 30
+[03-Jan-2021 23:47:23 Asia/Tokyo] PHP Notice:  Undefined variable: test in /Applications/MAMP/htdocs/study_localhost/hello.php on line 30
+[03-Jan-2021 23:47:28 Asia/Tokyo] PHP Notice:  Undefined variable: test in /Applications/MAMP/htdocs/study_localhost/hello.php on line 30
+[03-Jan-2021 23:47:29 Asia/Tokyo] PHP Notice:  Undefined variable: test in /Applications/MAMP/htdocs/study_localhost/hello.php on line 29
+[04-Jan-2021 00:27:49 Asia/Tokyo] PHP Notice:  Undefined variable: test in /Applications/MAMP/htdocs/study_localhost/hello.php on line 30
+[04-Jan-2021 00:44:52 Asia/Tokyo] PHP Notice:  Undefined offset: 4 in /Applications/MAMP/htdocs/study_localhost/hello.php on line 22
+[04-Jan-2021 00:44:53 Asia/Tokyo] PHP Notice:  Undefined offset: 4 in /Applications/MAMP/htdocs/study_localhost/hello.php on line 22
+[04-Jan-2021 23:07:35 Asia/Tokyo] PHP Recoverable fatal error:  Object of class Closure could not be converted to string in /Applications/MAMP/htdocs/study_localhost/hello.php on line 32
+[04-Jan-2021 23:07:36 Asia/Tokyo] PHP Recoverable fatal error:  Object of class Closure could not be converted to string in /Applications/MAMP/htdocs/study_localhost/hello.php on line 32
+[04-Jan-2021 23:07:38 Asia/Tokyo] PHP Recoverable fatal error:  Object of class Closure could not be converted to string in /Applications/MAMP/htdocs/study_localhost/hello.php on line 32
+[04-Jan-2021 23:08:26 Asia/Tokyo] PHP Recoverable fatal error:  Object of class Closure could not be converted to string in /Applications/MAMP/htdocs/study_localhost/hello.php on line 32
+[04-Jan-2021 23:08:26 Asia/Tokyo] PHP Recoverable fatal error:  Object of class Closure could not be converted to string in /Applications/MAMP/htdocs/study_localhost/hello.php on line 32
+[04-Jan-2021 23:08:33 Asia/Tokyo] PHP Recoverable fatal error:  Object of class Closure could not be converted to string in /Applications/MAMP/htdocs/study_localhost/hello.php on line 32
+[04-Jan-2021 23:10:07 Asia/Tokyo] PHP Recoverable fatal error:  Object of class Closure could not be converted to string in /Applications/MAMP/htdocs/study_localhost/function.php on line 14
+[04-Jan-2021 23:10:51 Asia/Tokyo] PHP Recoverable fatal error:  Object of class Closure could not be converted to string in /Applications/MAMP/htdocs/study_localhost/function.php on line 14
+[04-Jan-2021 23:12:30 Asia/Tokyo] デバッグ：1
+[04-Jan-2021 23:12:58 Asia/Tokyo] PHP Recoverable fatal error:  Object of class Closure could not be converted to string in /Applications/MAMP/htdocs/study_localhost/function.php on line 14
+[04-Jan-2021 23:13:24 Asia/Tokyo] PHP Notice:  Array to string conversion in /Applications/MAMP/htdocs/study_localhost/function.php on line 14
+[04-Jan-2021 23:13:24 Asia/Tokyo] デバッグ：Array
+[04-Jan-2021 23:13:44 Asia/Tokyo] PHP Recoverable fatal error:  Object of class Closure could not be converted to string in /Applications/MAMP/htdocs/study_localhost/function.php on line 14
+[04-Jan-2021 23:23:46 Asia/Tokyo] PHP Notice:  Array to string conversion in /Applications/MAMP/htdocs/study_localhost/hello.php on line 36
+[04-Jan-2021 23:26:47 Asia/Tokyo] PHP Warning:  get_defined_constants() expects parameter 1 to be bool, array given in /Applications/MAMP/htdocs/study_localhost/hello.php on line 42
+[04-Jan-2021 23:26:47 Asia/Tokyo] PHP Warning:  get_defined_constants() expects parameter 1 to be bool, array given in /Applications/MAMP/htdocs/study_localhost/hello.php on line 42
+[04-Jan-2021 23:26:51 Asia/Tokyo] PHP Warning:  get_defined_constants() expects parameter 1 to be bool, array given in /Applications/MAMP/htdocs/study_localhost/hello.php on line 42
+[04-Jan-2021 23:27:25 Asia/Tokyo] PHP Notice:  Only variables should be passed by reference in /Applications/MAMP/htdocs/study_localhost/hello.php on line 42
+[04-Jan-2021 23:27:35 Asia/Tokyo] PHP Notice:  Only variables should be passed by reference in /Applications/MAMP/htdocs/study_localhost/hello.php on line 42
+[04-Jan-2021 23:27:36 Asia/Tokyo] PHP Notice:  Only variables should be passed by reference in /Applications/MAMP/htdocs/study_localhost/hello.php on line 40
+[04-Jan-2021 23:48:00 Asia/Tokyo] PHP Notice:  Undefined property: Momoclo::$佐々木彩夏 in /Applications/MAMP/htdocs/study_localhost/hello.php on line 46
+[04-Jan-2021 23:48:08 Asia/Tokyo] PHP Notice:  Undefined property: Momoclo::$佐々木彩夏 in /Applications/MAMP/htdocs/study_localhost/hello.php on line 46
+[04-Jan-2021 23:48:09 Asia/Tokyo] PHP Notice:  Undefined property: Momoclo::$佐々木彩夏 in /Applications/MAMP/htdocs/study_localhost/hello.php on line 46
+[04-Jan-2021 23:48:09 Asia/Tokyo] PHP Notice:  Undefined property: Momoclo::$佐々木彩夏 in /Applications/MAMP/htdocs/study_localhost/hello.php on line 46
+[04-Jan-2021 23:48:57 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to undefined method Momoclo::pink() in /Applications/MAMP/htdocs/study_localhost/hello.php:40
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/study_localhost/hello.php on line 40
+[04-Jan-2021 23:48:58 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to undefined method Momoclo::pink() in /Applications/MAMP/htdocs/study_localhost/hello.php:40
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/study_localhost/hello.php on line 40
+[05-Jan-2021 01:27:56 Asia/Tokyo] PHP Recoverable fatal error:  Object of class StarDust could not be converted to string in /Applications/MAMP/htdocs/study_localhost/hello.php on line 62
+[05-Jan-2021 01:27:57 Asia/Tokyo] PHP Recoverable fatal error:  Object of class StarDust could not be converted to string in /Applications/MAMP/htdocs/study_localhost/hello.php on line 62
+[05-Jan-2021 01:27:58 Asia/Tokyo] PHP Recoverable fatal error:  Object of class StarDust could not be converted to string in /Applications/MAMP/htdocs/study_localhost/hello.php on line 62
+[05-Jan-2021 01:28:10 Asia/Tokyo] PHP Recoverable fatal error:  Object of class StarDust could not be converted to string in /Applications/MAMP/htdocs/study_localhost/hello.php on line 60
+[05-Jan-2021 01:28:10 Asia/Tokyo] PHP Recoverable fatal error:  Object of class StarDust could not be converted to string in /Applications/MAMP/htdocs/study_localhost/hello.php on line 60
+[05-Jan-2021 01:28:14 Asia/Tokyo] PHP Recoverable fatal error:  Object of class StarDust could not be converted to string in /Applications/MAMP/htdocs/study_localhost/hello.php on line 60
+[05-Jan-2021 01:28:15 Asia/Tokyo] PHP Recoverable fatal error:  Object of class StarDust could not be converted to string in /Applications/MAMP/htdocs/study_localhost/hello.php on line 60
+[05-Jan-2021 01:30:16 Asia/Tokyo] PHP Recoverable fatal error:  Object of class StarDust could not be converted to string in /Applications/MAMP/htdocs/study_localhost/hello.php on line 63
+[05-Jan-2021 01:30:17 Asia/Tokyo] PHP Recoverable fatal error:  Object of class StarDust could not be converted to string in /Applications/MAMP/htdocs/study_localhost/hello.php on line 63
+[05-Jan-2021 01:30:39 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Cannot access private property StarDust::$name in /Applications/MAMP/htdocs/study_localhost/hello.php:63
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/study_localhost/hello.php on line 63
+[05-Jan-2021 01:30:39 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Cannot access private property StarDust::$name in /Applications/MAMP/htdocs/study_localhost/hello.php:63
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/study_localhost/hello.php on line 63
+[05-Jan-2021 01:30:40 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Cannot access private property StarDust::$name in /Applications/MAMP/htdocs/study_localhost/hello.php:63
+Stack trace:
+#0 {main}
+  thrown in /Applications/MAMP/htdocs/study_localhost/hello.php on line 63
+[05-Jan-2021 01:33:18 Asia/Tokyo] PHP Notice:  Undefined property: StarDust::$ukka in /Applications/MAMP/htdocs/study_localhost/hello.php on line 63
+[05-Jan-2021 01:33:18 Asia/Tokyo] PHP Notice:  Undefined property: StarDust::$ukka in /Applications/MAMP/htdocs/study_localhost/hello.php on line 63
+[06-Jan-2021 21:43:14 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 21:43:15 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 22:19:59 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 22:20:00 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 22:20:54 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 22:20:54 Asia/Tokyo] PHP Notice:  Undefined index: name in /Applications/MAMP/htdocs/study_localhost/online_bbs/bbs.php on line 62
+[06-Jan-2021 22:20:54 Asia/Tokyo] PHP Notice:  Undefined index: comment in /Applications/MAMP/htdocs/study_localhost/online_bbs/bbs.php on line 63
+[06-Jan-2021 22:20:54 Asia/Tokyo] デバッグ：DBへの命令結果を反映
+[06-Jan-2021 22:20:54 Asia/Tokyo] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /Applications/MAMP/htdocs/study_localhost/online_bbs/bbs.php:46
+Stack trace:
+#0 /Applications/MAMP/htdocs/study_localhost/online_bbs/bbs.php(66): queryPost(NULL, 'INSERT INTO `po...', Array)
+#1 {main}
+  thrown in /Applications/MAMP/htdocs/study_localhost/online_bbs/bbs.php on line 46
+[06-Jan-2021 22:24:36 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 22:24:36 Asia/Tokyo] デバッグ：
+[06-Jan-2021 22:26:18 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 22:26:18 Asia/Tokyo] PHP Recoverable fatal error:  Object of class PDO could not be converted to string in /Applications/MAMP/htdocs/study_localhost/online_bbs/bbs.php on line 11
+[06-Jan-2021 22:27:04 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 22:27:04 Asia/Tokyo] PHP Notice:  Undefined index: name in /Applications/MAMP/htdocs/study_localhost/online_bbs/bbs.php on line 65
+[06-Jan-2021 22:27:04 Asia/Tokyo] PHP Notice:  Undefined index: comment in /Applications/MAMP/htdocs/study_localhost/online_bbs/bbs.php on line 66
+[06-Jan-2021 22:27:04 Asia/Tokyo] デバッグ：DBへの命令結果を反映
+[06-Jan-2021 22:27:04 Asia/Tokyo] デバッグ：クエリ成功
+[06-Jan-2021 22:27:04 Asia/Tokyo] デバッグ：成功
+[06-Jan-2021 22:27:49 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 22:27:49 Asia/Tokyo] PHP Notice:  Undefined index: name in /Applications/MAMP/htdocs/study_localhost/online_bbs/bbs.php on line 65
+[06-Jan-2021 22:27:49 Asia/Tokyo] PHP Notice:  Undefined index: comment in /Applications/MAMP/htdocs/study_localhost/online_bbs/bbs.php on line 66
+[06-Jan-2021 22:27:49 Asia/Tokyo] デバッグ：DBへの命令結果を反映
+[06-Jan-2021 22:27:49 Asia/Tokyo] デバッグ：クエリ成功
+[06-Jan-2021 22:27:49 Asia/Tokyo] デバッグ：成功
+[06-Jan-2021 22:28:49 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 22:28:49 Asia/Tokyo] PHP Notice:  Undefined index: comment in /Applications/MAMP/htdocs/study_localhost/online_bbs/bbs.php on line 66
+[06-Jan-2021 22:28:49 Asia/Tokyo] デバッグ：DBへの命令結果を反映
+[06-Jan-2021 22:28:49 Asia/Tokyo] デバッグ：クエリ成功
+[06-Jan-2021 22:28:49 Asia/Tokyo] デバッグ：成功
+[06-Jan-2021 22:28:55 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 22:28:55 Asia/Tokyo] PHP Notice:  Undefined index: comment in /Applications/MAMP/htdocs/study_localhost/online_bbs/bbs.php on line 66
+[06-Jan-2021 22:28:55 Asia/Tokyo] デバッグ：DBへの命令結果を反映
+[06-Jan-2021 22:28:55 Asia/Tokyo] デバッグ：クエリ成功
+[06-Jan-2021 22:28:55 Asia/Tokyo] デバッグ：成功
+[06-Jan-2021 22:30:30 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 22:30:30 Asia/Tokyo] PHP Notice:  Undefined index: comment in /Applications/MAMP/htdocs/study_localhost/online_bbs/bbs.php on line 66
+[06-Jan-2021 22:30:30 Asia/Tokyo] デバッグ：DBへの命令結果を反映
+[06-Jan-2021 22:30:30 Asia/Tokyo] デバッグ：クエリ成功
+[06-Jan-2021 22:30:30 Asia/Tokyo] デバッグ：成功
+[06-Jan-2021 22:31:59 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 22:31:59 Asia/Tokyo] デバッグ：commentのなかみここここ
+[06-Jan-2021 22:31:59 Asia/Tokyo] デバッグ：DBへの命令結果を反映
+[06-Jan-2021 22:31:59 Asia/Tokyo] デバッグ：クエリ成功
+[06-Jan-2021 22:31:59 Asia/Tokyo] デバッグ：成功
+[06-Jan-2021 22:41:28 Asia/Tokyo] デバッグ：>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始
+[06-Jan-2021 22:41:28 Asia/Tokyo] デバッグ：commentのなかみTEAMSHACHI 
+[06-Jan-2021 22:41:28 Asia/Tokyo] デバッグ：DBへの命令結果を反映
+[06-Jan-2021 22:41:28 Asia/Tokyo] デバッグ：クエリ成功
+[06-Jan-2021 22:41:28 Asia/Tokyo] デバッグ：成功
