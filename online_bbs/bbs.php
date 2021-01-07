@@ -40,9 +40,9 @@ function dbConnect()
 }
 debug('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 画面表示処理開始');
 
+
 $errors=array();
 
-debug('$errors'.print_r($errors,true));
 session_start();
 
 function queryPost($dbh, $sql, $data)
@@ -59,16 +59,23 @@ function queryPost($dbh, $sql, $data)
   return $stmt;
 }
 
+$post_name=$_POST['name'];
 
 
-if(!isset($_POST['name'])||!strlen($_POST['name'])){
-  debug('$errors'.print_r($errors,true));
+
+//名前フォームの入力チェック
+if(!empty($_POST)){
+  debug('入力チェック');
+if($post_name ===''){
   $errors['name']='一言入力してください';
-}else if(strlen($_POST['name'])>2){
+  debug('$errors一言'.print_r($errors,true));
+  debug('$errorsname'.print_r($post_name,true));
+}else if(strlen($post_name)>2){
   $errors['name']='2文字いない入力してください';
-}
+}}
 
 
+//エラーがなければフォームの値をDBへ登録
 if(count($errors)===0){
 
   if(!empty($_POST)){
@@ -88,6 +95,13 @@ if(count($errors)===0){
   }
   }
 }
+//投稿内容表示処理
+$db = dbConnect();
+$sq='SELECT * from `post` order by `created_at` DESC';
+$stm = $db->query($sq);
+$stttt=$stm->fetchall(PDO::FETCH_ASSOC);
+
+
 
 ?>
 <!DOCTYPE html>
@@ -98,16 +112,30 @@ if(count($errors)===0){
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ひとこと掲示板</title>
 </head>
-
+<style>
+.table1{
+  border:1px;
+  background-color: red;
+}
+</style>
 <body>
   <h1>ひとこと掲示板</h1>
 
   <form action="bbs.php" method=post>
-  <p><?php echo $errors['name'];?></p>
+ 
+  <p><?php if(!empty($errors['name'])) echo htmlspecialchars($errors['name']);
+  ?></p>
     名前：<input type="text" name='name'><br />
     ひとこと：<input type="text" name='comment' size="60"><br />
     <input type="submit" value="送信"><br />
   </form>
+<table class=table1 border="1" >
+<tr><th>投稿者</th><th>コメント</th></tr>
+
+<?php foreach($stttt as $st => $val){ ?>
+<tr><td> <?php echo $val['name']."<br>"; ?></td><td><?php  echo $val['comment']."<br>"; ?></td></tr>
+<?php } ?>
+</table>
 
 </body>
 
