@@ -1,5 +1,6 @@
 <?php
 
+//DB接続状況の管理
 class DbManeger
 {
 
