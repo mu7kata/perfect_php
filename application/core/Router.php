@@ -7,7 +7,7 @@ class Router
   protected $routes;
 
 
-  //__construct()・・・インスタンスを生成するときの初期化
+  //__construct()・・・新たにオブジェクトが 生成される度にコールされるマジックメソッド
   
   //Routerクラスの$routesを’$deginitions’の値に初期化
   public function __construct($definitions)
