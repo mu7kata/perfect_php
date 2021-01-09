@@ -1,7 +1,7 @@
 <?php
 
 //DB接続状況の管理
-class DbManeger
+class Dbmanager
 {
 
   //接続情報を入れるようの変数

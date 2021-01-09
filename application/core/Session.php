@@ -1,5 +1,5 @@
 <?php
-class Sesstion
+class Session
 {
   protected static $sessionStarted = false;
   protected static $sessionIdRegenerated = false;
