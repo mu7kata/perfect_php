@@ -1,4 +1,8 @@
 <?php
 
-class HttpNotFoundException extends Exception{}
-?>
+/**
+ * HttpNotFoundException.
+ *
+ * @author Katsuhiro Ogawa <fivestar@nequal.jp>
+ */
+class HttpNotFoundException extends Exception {};

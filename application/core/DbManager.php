@@ -1,94 +1,119 @@
 <?php
 
-//DB接続状況の管理
-class Dbmanager
+/**
+ * DbManager.
+ *
+ * @author Katsuhiro Ogawa <fivestar@nequal.jp>
+ */
+class DbManager
 {
+    protected $connections = array();
+    protected $repository_connection_map = array();
+    protected $repositories = array();
 
-  //接続情報を入れるようの変数
-  protected $connections = array();
+    /**
+     * データベースへ接続
+     *
+     * @param string $name
+     * @param array $params
+     */
+    public function connect($name, $params)
+    {
+        $params = array_merge(array(
+            'dsn'      => null,
+            'user'     => '',
+            'password' => '',
+            'options'  => array(),
+        ), $params);
 
-  protected $repositry_connection_map = array();
-  protected $repositories = array();
+        $con = new PDO(
+            $params['dsn'],
+            $params['user'],
+            $params['password'],
+            $params['options']
+        );
 
+        $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  //接続を行うメソッド、　connect('接続を特定する名前','接続に必要な情報')
-  public function connect($name, $params)
-  {
-    //1データベースに渡すユーザー情報
-    $params = array_merge(array(
-      'dsn' => 'null',
-      'uers' => '',
-      'password' => '',
-      'options' => array(),
-    ), $params);
-
-    //PDOクラスのインスタンスを作成
-    $con = new PDO(
-      $params['dsn'],
-      $params['user'],
-      $params['password'],
-      $params['options']
-    );
-
-    //エラーが起きた場合の例外処理
-    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $this->connections[$name] = $con;
-  }
-
-  //接続したコネクション（接続するプログラムの概要）を取得
-  public function getConnection($name = null)
-  {
-    if (is_null($name)) {
-      return current($this->connetions);
-    }
-    return $this->connections[$name];
-  }
-
-  ///?????????????
-  public function setRepositoryConnectionMap($repository_name, $name)
-  {
-    $this->repogtry_connection_map[$repository_name] = $name;
-  }
-
-  public function getConnectionForRepository($repository_name)
-  {
-    if (isset($this->repositry_connection_map[$repository_name])) {
-      $name = $this->repositry_connection_map[$repository_name];
-      $con = $this->getConnection($name);
-    } else {
-      $con = $this->getConnection();
-    }
-    return $con;
-  }
-
-  //リポジトリインスタンスの生成処理、指定されたリポジトリ名がなかったら生成
-  public function get($repository_name)
-  {
-  //クラス名の指定、
-    if(!isset($this->repositories[$repository_name])){
-      $repository_class = $repository_name.'Repository';
-    //$repository_nameのコネクション（接続処理）を取得
-      $con = $this->getConnectionForRepository($repository_name);
-    //インスタンスの作成
-      $repository = new $repository_class($con);
-    //インスタンスの保持のため、$repositoryに格納
-      $this->repositories[$repository_name]=$repository;
+        $this->connections[$name] = $con;
     }
 
-    return $this->repositories[$repository_name];
-  }
+    /**
+     * コネクションを取得
+     *
+     * @string $name
+     * @return PDO
+     */
+    public function getConnection($name = null)
+    {
+        if (is_null($name)) {
+            return current($this->connections);
+        }
 
-  //__desutruct()・・・特定のオブジェクトを参照先がひとつもなくなったとき、スクリプト終了時にコールされるマジックメソッド。
-  //DB接続の解放処理（接続をやめる）
-  public function __destruct()
-  {
+        return $this->connections[$name];
+    }
 
-    foreach ($this->repositories as $repository){
-      unset($repository);
+    /**
+     * リポジトリごとのコネクション情報を設定
+     *
+     * @param string $repository_name
+     * @param string $name
+     */
+    public function setRepositoryConnectionMap($repository_name, $name)
+    {
+        $this->repository_connection_map[$repository_name] = $name;
     }
-    foreach($this->connections as $con){
-      unset($con);
+
+    /**
+     * 指定されたリポジトリに対応するコネクションを取得
+     *
+     * @param string $repository_name
+     * @return PDO
+     */
+    public function getConnectionForRepository($repository_name)
+    {
+        if (isset($this->repository_connection_map[$repository_name])) {
+            $name = $this->repository_connection_map[$repository_name];
+            $con = $this->getConnection($name);
+        } else {
+            $con = $this->getConnection();
+        }
+
+        return $con;
     }
-  }
+
+    /**
+     * リポジトリを取得
+     *
+     * @param string $repository_name
+     * @return DbRepository
+     */
+    public function get($repository_name)
+    {
+        if (!isset($this->repositories[$repository_name])) {
+            $repository_class = $repository_name . 'Repository';
+            $con = $this->getConnectionForRepository($repository_name);
+
+            $repository = new $repository_class($con);
+
+            $this->repositories[$repository_name] = $repository;
+        }
+
+        return $this->repositories[$repository_name];
+    }
+
+    /**
+     * デストラクタ
+     * リポジトリと接続を破棄する
+     */
+    public function __destruct()
+    {
+        foreach ($this->repositories as $repository) {
+            unset($repository);
+        }
+
+        foreach ($this->connections as $con) {
+            unset($con);
+        }
+    }
 }

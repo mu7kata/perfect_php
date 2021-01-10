@@ -1,42 +1,71 @@
 <?php
 
-//DBへのアクセスを行う。SQLの実行処理など。
+/**
+ * DbRepository.
+ *
+ * @author Katsuhiro Ogawa <fivestar@nequal.jp>
+ */
 abstract class DbRepository
 {
-  protected $con;
+    protected $con;
 
-  //インスタンスが作成されたら、接続処理を保存するsetConnectionメソッドを発動
-  public function __construct($con)
-  {
-    $this->setConnection($con);
-  }
+    /**
+     * コンストラクタ
+     *
+     * @param PDO $con
+     */
+    public function __construct($con)
+    {
+        $this->setConnection($con);
+    }
 
-  //インスタンスに接続処理を保存
-  public function setConnection($con)
-  {
-    $this->con = $con;
-  }
+    /**
+     * コネクションを設定
+     *
+     * @param PDO $con
+     */
+    public function setConnection($con)
+    {
+        $this->con = $con;
+    }
+
+    /**
+     * クエリを実行
+     *
+     * @param string $sql
+     * @param array $params
+     * @return PDOStatement $stmt
+     */
+    public function execute($sql, $params = array())
+    {
+        $stmt = $this->con->prepare($sql);
+        $stmt->execute($params);
+
+        return $stmt;
+    }
+
+    /**
+     * クエリを実行し、結果を1行取得
+     *
+     * @param string $sql
+     * @param array $params
+     * @return array
+     */
+    public function fetch($sql, $params = array())
+    {
+        return $this->execute($sql, $params)->fetch(PDO::FETCH_ASSOC);
+    }
 
 
-  //SQLの実行処理
-  public function execute($sql,$params = array())
-  {
-    //prepare・・・ユーザからの入力されたSQL文をセットする
-    $stmt=$this->con->prepare($sql);
-    //excute()・・・処理の実行
-    $stmt->execute($params);
-
-    return $stmt;
-  }
-
-  //実行結果を1行のみ表示
-  public function fetch($sql,$params = array())
-  {
-    return $this->execute($sql,$params)->fetch(PDO::FETCH_ASSOC);
-  }
-   //実行結果を全て表示
-  public function fetchAll($sql,$params = array())
-  {
-    return $this->execute($sql,$params)->fetchAll(PDO::FETCH_ASSOC);
-  }
+    /**
+     * クエリを実行し、結果をすべて取得
+     *
+     * @param string $sql
+     * @param array $params
+     * @return array
+     */
+    public function fetchAll($sql, $params = array())
+    {
+        return $this->execute($sql, $params)->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
