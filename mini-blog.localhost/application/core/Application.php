@@ -30,6 +30,10 @@ abstract class Application
      * 
      * @param boolean $debug
      */
+    //ini_set()・・・設定オプションの値を設定
+    //error_reporting・・・出力する PHP エラーの種類を設定
+
+    //デバックモードに応じてエラー表示を変更
     protected function setDebugMode($debug)
     {
         if ($debug) {
@@ -45,6 +49,7 @@ abstract class Application
     /**
      * アプリケーションの初期化
      */
+    //クラスの初期化処理
     protected function initialize()
     {
         $this->request    = new Request();
@@ -57,6 +62,7 @@ abstract class Application
     /**
      * アプリケーションの設定
      */
+    //個別で設定できるように定義
     protected function configure()
     {
     }
@@ -66,6 +72,7 @@ abstract class Application
      *
      * @return string ルートディレクトリへのファイルシステム上の絶対パス
      */
+    //ルートディレクトリのパスを返すメソッド（実装漏れをなくすために抽象で定義）
     abstract public function getRootDir();
 
     /**
@@ -73,6 +80,7 @@ abstract class Application
      *
      * @return array
      */
+    //ルーティングの定義配列を渡す。
     abstract protected function registerRoutes();
 
     /**
@@ -170,6 +178,8 @@ abstract class Application
      *
      * @throws HttpNotFoundException ルートが見つからない場合
      */
+    //resolve()・・・PATH_INFOとルーティングの定義配列のマッチングを行うオリジナルメソッド
+    //リクエストに対応するためのメソッド、ルーティングパラメータを取得し、コントローラとアクション名を特定する。（処理の振り分けをするためにアクセス情報の分析する？？）
     public function run()
     {
         try {
@@ -201,6 +211,8 @@ abstract class Application
      *
      * @throws HttpNotFoundException コントローラが特定できない場合
      */
+    //ucfirst()・・・先頭を大文字にするメソッド
+    //アクションを実行するメソッド
     public function runAction($controller_name, $action, $params = array())
     {
         $controller_class = ucfirst($controller_name) . 'Controller';
@@ -221,6 +233,7 @@ abstract class Application
      * @param string $controller_class
      * @return Controller
      */
+    //コントローラが読み込まれていない場合にクラスファイルの読み込みをおこないコントローラを作成する。
     protected function findController($controller_class)
     {
         if (!class_exists($controller_class)) {
@@ -262,7 +275,6 @@ abstract class Application
     {$message}
 </body>
 </html>
-EOF
-        );
+EOF);
     }
 }

@@ -1,7 +1,8 @@
 <?PHP
 
-require 'mini-blog.localhost/application/bootstap.php';
+require '../bootstrap.php';
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
