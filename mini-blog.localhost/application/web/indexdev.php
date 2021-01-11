@@ -6,4 +6,3 @@ $app = new MiniBlogApplication(true);
 $app->run();
 ?>
 
-aaa
