@@ -3,7 +3,7 @@
 //タイトルを設定
 $this->setLayoutVar('title', 'アカウント登録')
 ?>
-
+application/views/account/siginup.php
 <h2>アカウント登録</h2>
 <!-- フォームの送信先を指定登録ページに設定 -->
 <form action="<?php echo $base_url; ?>/account/register" method="post">

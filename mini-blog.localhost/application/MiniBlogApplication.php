@@ -18,7 +18,7 @@ class MiniBlogApplication extends Application
 
       // /arrayにアクセスすると下記を配列として登録する
       '/array'
-      => array('controller' => 'accont', 'action' => 'index'),
+      => array('controller' => 'account', 'action' => 'index'),
 
       // /accountでアクセスするとindexアクションを呼び出す
       '/account/:action'
