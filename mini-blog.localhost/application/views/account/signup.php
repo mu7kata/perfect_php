@@ -17,34 +17,19 @@ echo $te;
   <!-- 画面には表示されないインプット、トークンを渡す -->
   <input type="hidden" name="_token" value="<?php echo $this->escape($_token); ?>" />
 
-<!--  -->
+  <!--  -->
+  <!-- エラー表示 -->
   <?php if (isset($errors) && count($errors) > 0) : ?>
+    <?php echo $this->render('errors', array('errors' => $errors)); ?>
+
     <ul class="error_list">
       <?php foreach ($errors as $error) : ?>
         <li><?php endforeach; ?></li>
     </ul>
   <?php endif; ?>
-  <table>
-    <tbody>
 
-      <tr>
-        <th>ユーザーID</th>
-        <td>
- <!--  -->
-          <input type="text" name="user_name" value="<?php echo $this->escape($user_name); ?>" />
-        </td>
-      </tr>
-      <tr>
-        <th>パスワード</th>
-        <td>
-      <!--  -->
-          <input type="password" name="password" value="<?php echo $this->escape($password); ?>" />
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
+<?php echo $this->render('account/inputs',array('user_name'=>$user_name,'password'=>$password,));?>
   <p>
-    <input type="submit" value="登録"/>
+    <input type="submit" value="登録" />
   </p>
 </form>

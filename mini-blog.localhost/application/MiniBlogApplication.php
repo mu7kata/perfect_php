@@ -16,6 +16,15 @@ class MiniBlogApplication extends Application
   {
     return array(
 
+
+      // '/'アクセスしたら、indexアクションを呼び出す
+      '/'
+      => array('controller'=>'status','action'=>'index'),
+      //'/status/post'でアクセスしたら、postアクションを呼び出す。
+      '/status/post'
+      =>array('controller'=>'status','action'=>'post'),
+    
+
       // /arrayにアクセスすると下記を配列として登録する
       '/array'
       => array('controller' => 'account', 'action' => 'index'),
@@ -23,6 +32,7 @@ class MiniBlogApplication extends Application
       // /accountでアクセスするとindexアクションを呼び出す
       '/account/:action'
       => array('controller' => 'account'),
+
     );
   }
 

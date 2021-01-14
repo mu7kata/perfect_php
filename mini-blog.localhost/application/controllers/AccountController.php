@@ -1,7 +1,10 @@
 <?php
+
+//新規登録機能
+
 class AccountController extends Controller
 {
-  public $A_Controller;
+
   public function signupAction()
   {
     return $this->render(array(
@@ -9,7 +12,6 @@ class AccountController extends Controller
     'password'=>'',
       '_token' => $this->generateCsrfToken('accont/signup'),
     ));
-    $A_Controller=$this;
 
   }
 
