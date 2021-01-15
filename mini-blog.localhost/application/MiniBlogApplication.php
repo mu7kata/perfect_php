@@ -33,7 +33,7 @@ class MiniBlogApplication extends Application
 
       // ----------------AccountControllerのルーティング--------------------------------------
       // /arrayにアクセスすると下記を配列として登録する
-      '/array'
+      '/account'
       => array('controller' => 'account', 'action' => 'index'),
 
       // /accountでアクセスするとindexアクションを呼び出す
