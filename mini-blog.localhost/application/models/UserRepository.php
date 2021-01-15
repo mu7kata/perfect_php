@@ -8,12 +8,12 @@ class UserRepository extends DbRepository
     $password = $this->hashPassword($password);
     $now = new Datetime();//現在時刻を表すオブジェクト
 
-    $sql="INSERT INTO user(user_name,password,create_at) VALUES(:user_name,:password,:create_at)";
+    $sql="INSERT INTO user(user_name,password,created_at) VALUES(:user_name,:password,:created_at)";
 
     $stmt = $this->execute($sql,array(
       ':user_name'=>$user_name,
       ':password'=>$password,
-      ':create_at'=>$now->format('Y-m-d H:i:s'),
+      ':created_at'=>$now->format('Y-m-d H:i:s'),
     ));
   }
 

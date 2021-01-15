@@ -16,15 +16,22 @@ class MiniBlogApplication extends Application
   {
     return array(
 
-
+      // ----------------StatusControllerのルーティング--------------------------------------
       // '/'アクセスしたら、indexアクションを呼び出す
       '/'
-      => array('controller'=>'status','action'=>'index'),
+      => array('controller' => 'status', 'action' => 'index'),
       //'/status/post'でアクセスしたら、postアクションを呼び出す。
       '/status/post'
-      =>array('controller'=>'status','action'=>'post'),
-    
+      => array('controller' => 'status', 'action' => 'post'),
+      //ユーザーIDの指定
+      '/user/:user_name'
+      => array('controller' => 'status', 'action' => 'user'),
 
+      //ユーザーIDと投稿IDの指定の指定
+      '/user/:user_name/status/:id'
+      => array('controller' => 'status', 'action' => 'show'),
+
+      // ----------------AccountControllerのルーティング--------------------------------------
       // /arrayにアクセスすると下記を配列として登録する
       '/array'
       => array('controller' => 'account', 'action' => 'index'),

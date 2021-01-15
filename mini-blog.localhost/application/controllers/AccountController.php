@@ -17,51 +17,50 @@ class AccountController extends Controller
 
 
   public function registerAction()
-  {
-    //POST以外のリクエストがなければ４０４エラーに遷移。
-    if (!$this->request->isPost()) {
-      $this->forward404();
-    }
-    //CSRFトークンが不正な場合（$tokenの値が'account/signupではなかったら？'）は入力画面に遷移
-    $token = $this->request->getPost('_token');
-    if (!$this->checkCsrfToken('account/signup', $token)) {
-      return $this->redirect('/account/siginup');
-    }
+  { if (!$this->request->isPost()) {
+    $this->forward404();
+}
 
-    $user_name = $this->request->getPost('user_name');
-    $password = $this->request->getPost('password');
+$token = $this->request->getPost('_token');
+if (!$this->checkCsrfToken('account/signup', $token)) {
+    return $this->redirect('/account/signup');
+}
 
-    $errors = array();
+$user_name = $this->request->getPost('user_name');
+$password = $this->request->getPost('password');
 
-    //バリデーションチェック
-    if (!strlen($user_name)) {
-      $errors[] = 'ユーザIDを入力しろ';
-    } else if (!preg_match('/^\w{3,20}$', $user_name)) {
-      $errors[] = 'ユーザーIDは半角英数字及び、３〜２０文字いないで入力しろ';
-    } else if (!$this->db_manager->get('User')->isUniqueUserName($user_name)) {
-    }
+$errors = array();
 
-    if (!strlen($password)) {
-      $errors[] = 'パスワードを入力してください';
-    } else if (4 > strlen($password) || strlen($password) > 30) {
-      $errors[] = 'パスワードは４〜30文字いないで入力してください';
-    }
-//エラーがなければDBへ登録する
-    if (count($errors) === 0) {
-      $this->db_manager->get('User')->insert($user_name, $password);
-      $this->session->setAuthenticated(true);
-      $user = $this->dbmanager->get('User')->fetchByUserName($user_name);
-      $this->session->set('user', $user);
+if (!strlen($user_name)) {
+    $errors[] = 'ユーザIDを入力してください';
+} else if (!preg_match('/^\w{3,20}$/', $user_name)) {
+    $errors[] = 'ユーザIDは半角英数字およびアンダースコアを3 ～ 20 文字以内で入力してください';
+} else if (!$this->db_manager->get('User')->isUniqueUserName($user_name)) {
+    $errors[] = 'ユーザIDは既に使用されています';
+}
 
-      return $this->redirect('/');
-    }
+if (!strlen($password)) {
+    $errors[] = 'パスワードを入力してください';
+} else if (4 > strlen($password) || strlen($password) > 30) {
+    $errors[] = 'パスワードは4 ～ 30 文字以内で入力してください';
+}
 
-    //失敗した場合は'signupテンプレートに戻る。￥その際、usernameなどの情報も引き継ぎをする。'
-    return $this->render(array(
-      'user_name' => $user_name,
-      'password' => $password,
-      'errors' => $errors,
-      '_token' => $this->generateCsrfToken('account/signup'),
-    ), 'signup');
-  }
+if (count($errors) === 0) {
+    $this->db_manager->get('User')->insert($user_name, $password);
+    $this->session->setAuthenticated(true);
+
+    $user = $this->db_manager->get('User')->fetchByUserName($user_name);
+    $this->session->set('user', $user);
+
+    return $this->redirect('/');
+}
+
+return $this->render(array(
+    'user_name' => $user_name,
+    'password'  => $password,
+    'errors'    => $errors,
+    '_token'    => $this->generateCsrfToken('account/signup'),
+), 'signup');
+}
+
 }

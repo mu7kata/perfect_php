@@ -12,6 +12,7 @@ class Request
      *
      * @return boolean
      */
+    
     public function isPost()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
