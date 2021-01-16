@@ -15,8 +15,7 @@
 <?php endif;?>
 
 <?php echo $this->render('account/inputs',array(
-  'user_name'=>$user_name,'password'=>$password,
-));?>
+  'user_name'=>$user_name,'password'=>$password,));?>
 <p>
 <input type="submit" value='ログイン' />
 </p>

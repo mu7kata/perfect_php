@@ -10,6 +10,19 @@
   <h1><a href="<?php echo $base_url;?>/">Mini Blog</a></h1>
   </div>
 
+  <div id="id">
+<p>
+<?php if($session->isAuthenticated()):?>
+<a href="<?php echo $base_url; ?>/">ホーム</a>
+<a href="<?php echo $base_url; ?>/">アカウント</a>
+<?php else :?>
+<a href="<?php echo $base_url;?>/">ログイン</a>
+<a href="<?php echo $base_url;?>/">アカウント登録</a>
+<?php endif;?>
+</p>
+
+</div>
+
   <div class="" id="main">
   <?php echo $_content;?>
   </div>
