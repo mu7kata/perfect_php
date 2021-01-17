@@ -27,7 +27,7 @@ class UserRepository extends DbRepository
     $sql = "SELECT * FROM user WHERE user_name =:user_name";
 
     //fetch()・・・
-    return $this->fetch($sql,array(':user_name =>$user_name'));
+    return $this->fetch($sql,array(':user_name' =>$user_name));
   }
 
   //ユーザーIDを元にレコード（行）件数を取得、ユーザー情報の存在を確認するためのメソッド？

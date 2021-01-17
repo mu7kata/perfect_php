@@ -17,7 +17,6 @@ $this->setLayoutVar('title', 'ホーム');
     <input type="submit" value="発言">
   </p>
 </form>
-<?php var_dump($statuses); ?>
 <div id="statuses">
   <?php foreach ($statuses as $status) : ?>
     <div class="status">

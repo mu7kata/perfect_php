@@ -3,10 +3,6 @@
 //タイトルを設定
 $this->setLayoutVar('title', 'アカウント登録');
 
-
-
-
-
 ?>
 
 <h2>アカウント登録</h2>
@@ -23,7 +19,7 @@ $this->setLayoutVar('title', 'アカウント登録');
     <?php echo $this->render('account/inputs', array(
         'user_name' => $user_name, 'password' => $password,
     )); ?>
-
+<p><?php echo $test;?></p>
     <p>
         <input type="submit" value="登録" />
     </p>

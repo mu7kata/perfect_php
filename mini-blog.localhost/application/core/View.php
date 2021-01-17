@@ -41,28 +41,27 @@ class View
      * @param array $_variables
      * @param mixed $_layout
      * @return string
-     */
+     */                  //ビューファイルのパス,渡す変数(連想配列),レイアウトファイル名
     public function render($_path, $_variables = array(), $_layout = false)
     {
         $_file = $this->base_dir . '/' . $_path . '.php';
 
         extract(array_merge($this->defaults, $_variables));
-
+        //シンボルテーブルにインポートした変数の数を返します//$_variables?
         ob_start();
-        ob_implicit_flush(0);
+        //出力のバッファリングを有効にする.バッファリング中にechoで出力されてあ値は画面には直接表示されない。内部に出力される。
+        ob_implicit_flush(0);//自動フラッシュをオンまたはオフにする
 
         require $_file;
 
         $content = ob_get_clean();
-
-        if ($_layout) {
-            $content = $this->render($_layout,
-                array_merge($this->layout_variables, array(
-                    '_content' => $content,
-                )
-            ));
+        //バッファに出力された値を取得する。$fileのこと？
+        
+        if ($_layout) {$content = $this->render($_layout,
+            array_merge($this->layout_variables, array('_content' => $content,)));
+            
         }
-
+   
         return $content;
     }
 

@@ -1,6 +1,7 @@
 <?php
 class StatusController extends Controller
 {
+  protected $auth_actions = array('index', 'post');
   public function indexAction()
   {
 
@@ -63,35 +64,49 @@ class StatusController extends Controller
     ), 'index');
   }
 
-  public function userAction($param)
+  public function userAction($params)
   {
     $user = $this->db_manager->get('user')
-    ->fetchByUserName($params['user_name']);
+      ->fetchByUserName($params['user_name']);
 
     //ユーザーの存在を確認数
-    if(!$user){
+    if (!$user) {
       $this->forward404();
     }
 
     //対象ユーザーの投稿一覧を取得
     $statuses = $this->db_manager->get('Status')
-    ->fetchAllByUserId($user['id']);
-  
+      ->fetchAllByUserId($user['id']);
+
+    $following = null;
+    if ($this->session->isAuthenticated()) {
+      $my = $this->session->get('user');
+
+      //自分自身のフォローは表示しないようにする
+      if ($my['id'] !== $user['id']) {
+        $following = $this->db_manager
+          ->get('Fllowing')
+          ->isFollowing($my['id'], $user['id']);//フォローしている値を抽出
+      }
+    }
+
     return $this->render(array(
-      'user' =>$user,
-      'statuses'=>$statuses,
-    ));
+      'user' => $user,
+      'statuses' => $statuses,
+      'following' => $following,
+       '_token' => $this->generateCsrfToken('account/follow'),
+      ));
   }
   public function showAction($params)
   {
     //外部からんデータ（$param）を元に投稿情報を取得
     $status = $this->db_manager->get('Status')
-    ->fetchByIdAndUserName($param['id'],$params['user_name']);
+      ->fetchByIdAndUserName($param['id'], $params['user_name']);
 
-    if(!$status){
+    if (!$status) {
       $this->forward404();
     }
 
-    return $this->render(array('status=>$status'));
+    return $this->render(array('status' => $status));
   }
 }
