@@ -5,4 +5,3 @@ require '../MiniBlogApplication.php';
 $app = new MiniBlogApplication(false);
 $app->run();
 
-echo 'aaa';
