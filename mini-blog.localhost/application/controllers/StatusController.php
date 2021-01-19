@@ -66,6 +66,7 @@ class StatusController extends Controller
 
   public function userAction($params)
   {
+    //外部データからユーザ情報を取得
     $user = $this->db_manager->get('user')
       ->fetchByUserName($params['user_name']);
 
@@ -83,12 +84,12 @@ class StatusController extends Controller
       $my = $this->session->get('user');
 
       //自分自身のフォローは表示しないようにする
+      //外部からのデータ（ユーザーID）が自分のものではなかったら。フォロー情報の取得（存在してるかTRUE or FALSE）
       if ($my['id'] !== $user['id']) {
         $following = $this->db_manager
-          ->get('Fllowing')
+          ->get('Following')
           ->isFollowing($my['id'], $user['id']);//フォローしている値を抽出
-      }
-    }
+      }}
 
     return $this->render(array(
       'user' => $user,
@@ -101,12 +102,11 @@ class StatusController extends Controller
   {
     //外部からんデータ（$param）を元に投稿情報を取得
     $status = $this->db_manager->get('Status')
-      ->fetchByIdAndUserName($param['id'], $params['user_name']);
+      ->fetchByIdAndUserName($params['id'], $params['user_name']);
 
     if (!$status) {
       $this->forward404();
     }
-
     return $this->render(array('status' => $status));
   }
 }

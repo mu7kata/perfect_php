@@ -3,7 +3,7 @@ $this->setLayoutVar('title', 'ホーム');
 ?>
 
 <h2>ホーム</h2>
-<?php var_dump($_SESSION);?>
+
 <form action="<?php echo $base_url; ?>/status/post" method="post">
   <input type="hidden" name="_token" value="<?php echo $this->escape($_token); ?>" />
 

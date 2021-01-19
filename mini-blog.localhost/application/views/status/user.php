@@ -1,7 +1,9 @@
 <?php $this->setlayoutVar('title', $user['user_name']) ?>
 
 <h2><?php echo $this->escape($user['user_name']); ?></h2>
-
+<p>
+<?php var_dump($following);?>
+</p>
 <?php if (!is_null($following)) : ?>
   <?php if ($following) : ?>
     <p>フォローしています</p>

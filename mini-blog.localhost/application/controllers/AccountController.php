@@ -4,7 +4,7 @@
 
 class AccountController extends Controller
 {
-  protected $auth_actions = array('index', 'signout','follow');
+   protected $auth_actions = array('index', 'signout', 'follow');
  
   public function signupAction()
   {
@@ -83,18 +83,19 @@ class AccountController extends Controller
   
   public function signinAction()
   {
-    
-    //ログインしてるか確認
-    if ($this->session->isAuthenticated()) {
-      return $this->redirect('/account');
-    }
-    //ビューファイルに渡す変数の指定
-    return $this->render(array(
-      'user_name' => '',
-      'password' => '',
-      '_token' => $this->generateCsrfToken('account/signin'),
-    ));
+      if ($this->session->isAuthenticated()) {
+          return $this->redirect('/account');
+      }
+
+      return $this->render(array(
+          'user_name' => '',
+          'password'  => '',
+          '_token'    => $this->generateCsrfToken('account/signin'),
+      ));
   }
+
+
+
   public function authenticateAction()
   {
     if ($this->session->isAuthenticated()) {
@@ -151,7 +152,7 @@ class AccountController extends Controller
   public function signoutAction()
   {
     $this->session->clear();
-    $this->session->setAuthenticated('false');
+    $this->session->setAuthenticated(false);
 
     return $this->redirect('/account/signin');
 

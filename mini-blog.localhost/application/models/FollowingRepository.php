@@ -6,7 +6,7 @@ class FollowingRepository extends DbRepository
   {
     $sql = "INSERT INTO following VALUES(:user_id,:following_id)";
 
-    $stmt = $this->excute($sql, array(
+    $stmt = $this->execute($sql, array(
       ':user_id' => $user_id,
       'following_id' => $following_id,
     ));
@@ -25,8 +25,8 @@ class FollowingRepository extends DbRepository
       ':user_id' => $user_id,
       ':following_id' => $following_id,
     ));
-  if($row['count']!==0){
-    return true;
+  if($row['count']!=='0'){
+    return $row['count'];
   }
 
   return false;
