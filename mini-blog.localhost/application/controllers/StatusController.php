@@ -3,7 +3,7 @@ class StatusController extends Controller
 {
   protected $auth_actions = array('index', 'post');
 
-  
+
   public function indexAction()
   {
     $user = $this->session->get('user');
@@ -121,4 +121,10 @@ class StatusController extends Controller
     }
     return $this->render(array('users' => $users));
   }
+
+public function followAction(){
+  $follower_name=$this->db_manager->get('Status')
+  ->fetchByFollower(9);
+  return $this->render(array('follower_name'=>$follower_name));
+}
 }
