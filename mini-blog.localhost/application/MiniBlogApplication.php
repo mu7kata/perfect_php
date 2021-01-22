@@ -31,6 +31,8 @@ class MiniBlogApplication extends Application
       '/user/:user_name/status/:id'
       => array('controller' => 'status', 'action' => 'show'),
 
+      '/status/users'
+      => array('controller' => 'status','action'=>'users'),
       // ----------------AccountControllerのルーティング--------------------------------------
       // /arrayにアクセスすると下記を配列として登録する
       '/account'

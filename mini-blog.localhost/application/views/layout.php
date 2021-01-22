@@ -24,8 +24,8 @@
 <!-- 認証されていたら。。 -->
 <?php if($session->isAuthenticated()):?>
 <a href="<?php echo $base_url; ?>/">ホーム</a>
-<a href="<?php echo $base_url; ?>/account"><?php echo 'アカウント('.$hhh.')';?></a>
-<a href="">ユーザ一覧</a>
+<a href="<?php echo $base_url; ?>/account"><?php echo 'アカウント('.$_SESSION['user']['user_name'].')';?></a>
+<a href="<?php echo $base_url; ?>/status/users">ユーザ一覧</a>
 <?php else :?>
 <a href="<?php echo $base_url;?>/account/signin">ログイン</a>
 <a href="<?php echo $base_url;?>/account/signup">アカウント登録</a>
@@ -33,7 +33,9 @@
 </p>
 </div>
   <div class="" id="main">
-  <?php echo $_content;?>
+  <?php
+  echo $_content;
+  ?>
   </div>
 </body>
 </html>

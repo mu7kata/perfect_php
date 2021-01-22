@@ -64,6 +64,12 @@ public function fetchByIdAndUserName($id,$user_name)
 
 }
 
+public function fetchByusername(){
 
+  $sql ="
+  select user_name from user
+  ";
+  return $this->fetchAll($sql);
+}
 }
 ?>

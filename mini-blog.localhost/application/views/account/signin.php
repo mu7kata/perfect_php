@@ -16,8 +16,7 @@
 <?php endif;?>
 
 <!-- 入力フォームの読み込み -->
-<?php echo $this->render('account/inputs',array(
-  'user_name'=>$user_name,'password'=>$password,));?>
+<?php echo $this->render('account/inputs',array('user_name'=>$user_name,'password'=>$password,));?>
 <p>
 <input type="submit" value='ログイン' />
 </p>

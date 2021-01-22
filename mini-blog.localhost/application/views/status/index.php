@@ -2,10 +2,12 @@
 $this->setLayoutVar('title', 'ホーム');
 
 
-$this->setLayoutVar('hhh',$statuses[0]['user_name']);
+
 
 ?>
+<?php 
 
+ ?>
 <h2>ホーム</h2>
 
 <form action="<?php echo $base_url; ?>/status/post" method="post">
