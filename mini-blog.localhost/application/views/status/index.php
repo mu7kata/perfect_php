@@ -1,5 +1,9 @@
 <?php
 $this->setLayoutVar('title', 'ホーム');
+
+
+$this->setLayoutVar('hhh',$statuses[0]['user_name']);
+
 ?>
 
 <h2>ホーム</h2>

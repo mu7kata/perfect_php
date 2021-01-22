@@ -14,13 +14,17 @@ class AccountController extends Controller
       '_token' => $this->generateCsrfToken('account/signup'),
     ));
   }
+//新規登録処理
   public function registerAction()
   {
     //リクエストの種類が”post”じゃなかったら４０４エラー
     if (!$this->request->isPost()) {
       $this->forward404();
     }
-  
+    
+    if ($this->session->isAuthenticated()) {
+      return $this->redirect('/account');
+  }
     //ポストのトークンの値を格納
     $token = $this->request->getPost('_token');
 
@@ -48,7 +52,7 @@ class AccountController extends Controller
     }
     
     if (count($errors) === 0) {
-//Userリポジトリのinsertメソッドを呼び出す。
+    //Userリポジトリのinsertメソッドを呼び出す。
       $this->db_manager->get('User')->insert($user_name, $password);
       $this->session->setAuthenticated(true);
   
@@ -66,7 +70,7 @@ class AccountController extends Controller
     ), 'signup');
   }
 
-  //認証するアクション
+//認証するアクション
   public function indexAction()
   {
       $user = $this->session->get('user');
@@ -80,7 +84,7 @@ class AccountController extends Controller
   }
 
   
-  
+//ログイン処理
   public function signinAction()
   {
       if ($this->session->isAuthenticated()) {
@@ -95,7 +99,7 @@ class AccountController extends Controller
   }
 
 
-
+//認証確認処理
   public function authenticateAction()
   {
     if ($this->session->isAuthenticated()) {
@@ -149,6 +153,7 @@ class AccountController extends Controller
     ), 'signin');
   }
 
+//ログアウト処理
   public function signoutAction()
   {
     $this->session->clear();
@@ -157,6 +162,8 @@ class AccountController extends Controller
     return $this->redirect('/account/signin');
 
   }
+
+//フォロー処理
   public function followAction()
   {
       if (!$this->request->isPost()) {
