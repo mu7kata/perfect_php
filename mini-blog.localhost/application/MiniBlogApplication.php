@@ -34,7 +34,7 @@ class MiniBlogApplication extends Application
       '/status/users'
       => array('controller' => 'status','action'=>'users'),
       
-      '/status/follow'
+      '/status/follow/:id'
       => array('controller' => 'status','action'=>'follow'),
       // ----------------AccountControllerのルーティング--------------------------------------
       // /arrayにアクセスすると下記を配列として登録する

@@ -122,9 +122,10 @@ class StatusController extends Controller
     return $this->render(array('users' => $users));
   }
 
-public function followAction(){
+public function followAction($params){
+
   $follower_name=$this->db_manager->get('Status')
-  ->fetchByFollower(9);
-  return $this->render(array('follower_name'=>$follower_name));
+  ->fetchByFollower($_SESSION['user']['id'],$params[1]);
+  return $this->render(array('follower_name'=>$follower_name,'params'=>$params));
 }
 }

@@ -71,14 +71,24 @@ FROM status a
     return $this->fetchAll($sql);
   }
 
-  public function fetchByFollower($user_id)
+  public function fetchByFollower($user_id, $param)
   {
-  $sql = "SELECT user.user_name
-  FROM  user
-  LEFT JOIN following ON following.following_id = user.id
-  where following.user_id=$user_id";
 
+    if ($param === 'to') {
+      //フォローされてる人を表示
+      $sql = "SELECT user.user_name
+      FROM  user
+      LEFT JOIN following ON following.following_id = user.id
+      where following.user_id=$user_id";
+    } else {
+      //フォローしている人を表示
+      $sql = "SELECT user.user_name
+      FROM  user
+      LEFT JOIN following ON following.user_id = user.id
+      where following.following_id=$user_id";
+    }
     return $this->fetchAll($sql);
   }
 }
 ?>
+ 
