@@ -40,6 +40,7 @@ class UserRepository extends DbRepository
     }
     return false;
   }
+  // 修正箇所-----------------------------------------------------------------------
   public function fetchAllFollowingsByUserId($user_id)
   {
       $sql = "

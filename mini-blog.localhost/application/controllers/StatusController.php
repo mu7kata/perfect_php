@@ -9,8 +9,8 @@ class StatusController extends Controller
     $user = $this->session->get('user');
 
     $statuses = $this->db_manager->get('Status')
-      ->fetchAllPersonalArchivesByUserId($user['id']);
-
+    ->fetchAllByUserId($user['id']);
+ 
     return $this->render(array(
       'statuses' => $statuses,
       'body' => '',
@@ -68,9 +68,11 @@ class StatusController extends Controller
   public function userAction($params)
   {
     //外部データからユーザ情報を取得
+   
     $user = $this->db_manager->get('user')
-      ->fetchByUserName($params['user_name']);
-
+    ->fetchByUserName($params['user_name']);
+      $follower = $this->db_manager->get('Following')->Follower($user['id']);
+      $follow=$this->db_manager->get('Following')->Follow($user['id']);
     //ユーザーの存在を確認数
     if (!$user) {
       $this->forward404();
@@ -78,8 +80,7 @@ class StatusController extends Controller
 
     //対象ユーザーの投稿一覧を取得
     $statuses = $this->db_manager->get('Status')
-      ->fetchAllByUserId($user['id']);
-
+      ->fetchAllPersonalArchivesByUserId($user['id']);
     $following = null;
     if ($this->session->isAuthenticated()) {
       $my = $this->session->get('user');
@@ -97,6 +98,9 @@ class StatusController extends Controller
       'statuses' => $statuses,
       'following' => $following,
        '_token' => $this->generateCsrfToken('account/follow'),
+       'follower' => $follower,
+       'follow'=>$follow,
+       
       ));
   }
   public function showAction($params)
@@ -121,11 +125,11 @@ class StatusController extends Controller
     }
     return $this->render(array('users' => $users));
   }
-
+// 修正箇所-----------------------------------------------------------------------
 public function followAction($params){
 
   $follower_name=$this->db_manager->get('Status')
-  ->fetchByFollower($_SESSION['user']['id'],$params[1]);
+  ->fetchByFollower($params['id'],$params[1]);
   return $this->render(array('follower_name'=>$follower_name,'params'=>$params));
 }
 }

@@ -31,7 +31,7 @@ class FollowingRepository extends DbRepository
 
     return false;
   }
-  public function Follower($user_id)
+  public function Follow($user_id)
   {
     $sql = "select count(following_id) from following where user_id=:user_id";
 
@@ -39,10 +39,9 @@ class FollowingRepository extends DbRepository
       ':user_id' => $user_id,
     ));
   }
-  public function Follow($user_id)
+  public function Follower($user_id)
   {
     $sql =  "select count(user_id) from following where following_id=:user_id";
-
     return $this->fetchall($sql, array(
       ':user_id' => $user_id,
     ));

@@ -30,12 +30,13 @@ class MiniBlogApplication extends Application
       //ユーザーIDと投稿IDの指定の指定
       '/user/:user_name/status/:id'
       => array('controller' => 'status', 'action' => 'show'),
-
+// 　修正箇所-----------------------------------------------------------------------
       '/status/users'
       => array('controller' => 'status','action'=>'users'),
       
-      '/status/follow/:id'
+      '/status/follow/:check/:id'
       => array('controller' => 'status','action'=>'follow'),
+// ↑修正箇所-----------------------------------------------------------------------
       // ----------------AccountControllerのルーティング--------------------------------------
       // /arrayにアクセスすると下記を配列として登録する
       '/account'

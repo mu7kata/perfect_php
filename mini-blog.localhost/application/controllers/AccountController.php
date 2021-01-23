@@ -73,12 +73,14 @@ class AccountController extends Controller
   //認証するアクション
   public function indexAction()
   {
+
     $user = $this->session->get('user');
     $followings = $this->db_manager->get('User')
-      ->fetchAllFollowingsByUserId($user['id']);
-
-    $follower = $this->db_manager->get('Following')->Follower(9);
-    $follow=$this->db_manager->get('Following')->Follow(9);
+    ->fetchAllFollowingsByUserId($user['id']);
+    
+    // 修正箇所もらたもらたもらたもらたもらたーーもらたもらたもらたもらたーーー
+    $follower = $this->db_manager->get('Following')->Follower($user['id']);
+    $follow=$this->db_manager->get('Following')->Follow($user['id']);
     return $this->render(array(
       'user'       => $user,
       'followings' => $followings,

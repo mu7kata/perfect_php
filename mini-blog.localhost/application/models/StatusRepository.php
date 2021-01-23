@@ -31,6 +31,7 @@ VALUES(:user_id, :body, :created_at)
   ";
     return $this->fetchAll($sql, array(':user_id' => $user_id));
   }
+  
   public function fetchAllByUserId($user_id)
   {
 
@@ -40,7 +41,7 @@ FROM status a
     LEFT JOIN user u ON a.user_id = u.id
     LEFT JOIN following f ON f.following_id = a.user_id
         AND f.user_id = :user_id
-    WHERE f.user_id = :user_id OR u.id = :user_id
+        WHERE f.user_id = :user_id OR u.id = :user_id
     ORDER BY a.created_at DESC
 ";
     return $this->fetchall($sql, array(
@@ -61,7 +62,7 @@ FROM status a
       ':id' => $id
     ));
   }
-
+// 修正箇所-----------------------------------------------------------------------
   public function fetchByusername()
   {
 
@@ -74,7 +75,7 @@ FROM status a
   public function fetchByFollower($user_id, $param)
   {
 
-    if ($param === 'to') {
+    if ($param !== 'to') {
       //フォローされてる人を表示
       $sql = "SELECT user.user_name
       FROM  user
@@ -89,6 +90,13 @@ FROM status a
     }
     return $this->fetchAll($sql);
   }
+
+  
 }
-?>
- 
+// SELECT a.*, u.user_name
+// FROM status  a
+// LEFT JOIN user  u ON a.user_id = u.id
+// LEFT JOIN following f ON f.following_id = a.user_id
+// AND f.user_id = 9
+// WHERE f.user_id = 9 OR u.id = 9
+// ORDER BY a.created_at DESC

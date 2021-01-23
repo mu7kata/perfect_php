@@ -1,5 +1,5 @@
 <?php $this->setlayoutVar('title','アカウント') ;
-var_dump();
+
 
 ?>
 <h2>アカウント</h2>
@@ -12,8 +12,10 @@ var_dump();
 </p>
 
 <ul>
-<li><a href="<?php echo $base_url;?>/status/follow/from">フォロー</a><?php echo $follow[0]['count(user_id)']; ?>人</li>
-<li><a href="<?php echo $base_url;?>/status/follow/to">フォロワー</a><?php echo $follower[0]['count(following_id)']; ?>人</li>
+<!-- // 修正箇所----------------------------------------------------------------------- -->
+<li><a href="<?php echo $base_url;?>/status/follow/from/<?php echo $user['id']?>">フォロー</a><?php echo $follow[0]['count(following_id)']; ?>人</li>
+<li><a href="<?php echo $base_url;?>/status/follow/to/<?php echo $user['id']?>">フォロワー</a><?php echo $follower[0]['count(user_id)']; ?>人</li>
+<!--  -->
 <li><a href="<?php echo $base_url;?>">ホーム</a></li>
 <li><a href="<?php echo $base_url;?>/account/signout">ログアウト</a></li>
 </ul>
