@@ -1,7 +1,10 @@
 <?php
 $this->setLayoutVar('title', 'ホーム');
 
-$icon=$statuses[3]['icon'];
+$icon=array_column($statuses,'icon');
+
+//画像表示配列用
+$i=0;
 
 ?>
 <?php 
@@ -24,9 +27,13 @@ $icon=$statuses[3]['icon'];
 
 </form>
 <div id="statuses">
-  <?php foreach ($statuses as $status) : ?>
+  <?php foreach ($statuses as $status) :
+ 
+ $icon=$statuses[$i]['icon'];
+ $i++;
+?>
   <p>
-    <img class='status_icon' src="/study_localhost/mini-blog.localhost/application/<?php echo $icon?>" alt="k">
+    <img class='status_icon' src="/study_localhost/mini-blog.localhost/application/<?php echo $icon;?>" alt="">
   </p>
     <div class="status">
      <?php echo $this->render('status/status',array('status'=>$status));?>

@@ -75,21 +75,21 @@ class AccountController extends Controller
   {
     $user = $this->session->get('user');
     $followings = $this->db_manager->get('User')
-    ->fetchAllFollowingsByUserId($user['id']);
-    
+      ->fetchAllFollowingsByUserId($user['id']);
+
     //ユーザーのステータスを取得
     $user_statuses = $this->db_manager->get('Status')
-    ->fetchAllPersonalArchivesByUserId($user['id']);
+      ->fetchAllPersonalArchivesByUserId($user['id']);
 
     // 修正箇所もらたもらたもらたもらたもらたーーもらたもらたもらたもらたーーー
     $follower = $this->db_manager->get('Following')->Follower($user['id']);
-    $follow=$this->db_manager->get('Following')->Follow($user['id']);
+    $follow = $this->db_manager->get('Following')->Follow($user['id']);
     return $this->render(array(
       'user'       => $user,
       'followings' => $followings,
       'follower' => $follower,
-      'follow'=>$follow,
-      'user_statuses'=>$user_statuses,
+      'follow' => $follow,
+      'user_statuses' => $user_statuses,
     ));
   }
 

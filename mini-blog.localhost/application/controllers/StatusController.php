@@ -11,8 +11,6 @@ class StatusController extends Controller
     $statuses = $this->db_manager->get('Status')
     ->fetchAllByUserId($user['id']);
  
-
-
     return $this->render(array(
       'statuses' => $statuses,
       'body' => '',

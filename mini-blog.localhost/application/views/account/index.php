@@ -2,7 +2,7 @@
 
 $this->setlayoutVar('title','アカウント') ;
 $icon=$user_statuses[1]['icon'];
-var_dump($user_statuses);
+
 ?>
 <h2>マイアカウント</h2>
 <img src="/study_localhost/mini-blog.localhost/application/<?php echo $icon;?>" alt="k">

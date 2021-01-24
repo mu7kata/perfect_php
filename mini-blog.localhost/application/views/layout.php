@@ -13,11 +13,13 @@
 <?php require('style.css');?>
 </style>
 </head>
-
-<body>
+<header>
   <div id="header">
   <h1><a href="<?php echo $base_url;?>/">Mini Blog</a></h1>
   </div>
+</header>
+
+<body>
 
   <div id="id">
 <p>
