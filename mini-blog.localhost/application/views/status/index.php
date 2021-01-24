@@ -1,9 +1,8 @@
 <?php
 $this->setLayoutVar('title', 'ホーム');
 
-
-
-
+$icon=$statuses[3]['icon'];
+echo var_dump($statuses[3]);
 ?>
 <?php 
 
@@ -22,9 +21,13 @@ $this->setLayoutVar('title', 'ホーム');
   <p>
     <input type="submit" value="発言">
   </p>
+
 </form>
 <div id="statuses">
   <?php foreach ($statuses as $status) : ?>
+  <p>
+    <img class='status_icon' src="/study_localhost/mini-blog.localhost/application/<?php echo $icon?>" alt="k">
+  </p>
     <div class="status">
      <?php echo $this->render('status/status',array('status'=>$status));?>
   <?php endforeach; ?>

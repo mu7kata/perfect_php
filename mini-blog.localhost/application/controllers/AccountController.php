@@ -73,11 +73,14 @@ class AccountController extends Controller
   //認証するアクション
   public function indexAction()
   {
-
     $user = $this->session->get('user');
     $followings = $this->db_manager->get('User')
     ->fetchAllFollowingsByUserId($user['id']);
     
+    //ユーザーのステータスを取得
+    $user_statuses = $this->db_manager->get('Status')
+    ->fetchAllPersonalArchivesByUserId($user['id']);
+
     // 修正箇所もらたもらたもらたもらたもらたーーもらたもらたもらたもらたーーー
     $follower = $this->db_manager->get('Following')->Follower($user['id']);
     $follow=$this->db_manager->get('Following')->Follow($user['id']);
@@ -86,6 +89,7 @@ class AccountController extends Controller
       'followings' => $followings,
       'follower' => $follower,
       'follow'=>$follow,
+      'user_statuses'=>$user_statuses,
     ));
   }
 
@@ -204,3 +208,26 @@ class AccountController extends Controller
     return $this->redirect('/account');
   }
 }
+[0]=> array(6) { 
+  ["id"]=> string(2) "18"
+   ["user_id"]=> string(1) "8" 
+   ["body"]=> string(15) "おやすみ〜" 
+   ["created_at"]=> string(19) "2021-01-24 20:13:50" 
+   ["icon"]=> NULL 
+  ["user_name"]=> string(5) "12345" } 
+  
+  [1]=> array(6) { 
+    ["id"]=> string(2) "17" 
+    ["user_id"]=> string(1) "8" 
+    ["body"]=> string(21) "お腹すいた〜！" 
+    ["created_at"]=> string(19) "2021-01-24 02:26:15" 
+    ["icon"]=> NULL 
+    ["user_name"]=> string(5) "12345" } 
+    
+    [2]=> array(6) { 
+      ["id"]=> string(2) "10" 
+      ["user_id"]=> string(1) "8" 
+      ["body"]=> string(3) "sss" 
+      ["created_at"]=> string(19) "2021-01-18 22:01:19" 
+      ["icon"]=> string(17) "image/nobita.jpeg" 
+      ["user_name"]=> string(5) "12345" } }

@@ -31,6 +31,8 @@ VALUES(:user_id, :body, :created_at)
   ";
     return $this->fetchAll($sql, array(':user_id' => $user_id));
   }
+
+
   
   public function fetchAllByUserId($user_id)
   {
@@ -59,7 +61,8 @@ FROM status a
   AND u.user_name = :user_name
   ";
     return $this->fetch($sql, array(
-      ':id' => $id
+      ':id' => $id,
+      'user_name'=>$user_name,
     ));
   }
 // 修正箇所-----------------------------------------------------------------------

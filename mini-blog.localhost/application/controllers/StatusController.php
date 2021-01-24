@@ -11,6 +11,7 @@ class StatusController extends Controller
     $statuses = $this->db_manager->get('Status')
     ->fetchAllByUserId($user['id']);
  
+    
     return $this->render(array(
       'statuses' => $statuses,
       'body' => '',
@@ -93,6 +94,9 @@ class StatusController extends Controller
           ->isFollowing($my['id'], $user['id']);//フォローしている値を抽出
       }}
 
+      $user_status = $this->db_manager->get('Status')
+      ->fetchAllPersonalArchivesByUserId($user['id']);
+
     return $this->render(array(
       'user' => $user,
       'statuses' => $statuses,
@@ -100,6 +104,7 @@ class StatusController extends Controller
        '_token' => $this->generateCsrfToken('account/follow'),
        'follower' => $follower,
        'follow'=>$follow,
+       'user_status'=>$user_status,
        
       ));
   }

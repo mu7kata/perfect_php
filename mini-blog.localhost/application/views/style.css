@@ -51,3 +51,8 @@ ul.error_list {
 ul.error_list li {
     color: #FF0000;
 }
+
+.status_icon{
+    width: 70px;
+    height: 70px;
+}
