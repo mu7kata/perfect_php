@@ -2,7 +2,7 @@
 $this->setLayoutVar('title', 'ホーム');
 
 $icon=$statuses[3]['icon'];
-
+echo var_dump($statuses[3]);
 ?>
 <?php 
 
