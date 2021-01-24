@@ -2,8 +2,10 @@ body {
   margin: 0;
   padding: 0;
   color: #000000;
-  margin: 0 auto;
-  width: 980px;
+}
+.site-width,.status_content{
+    margin: 0 auto;
+    width: 980px;
 }
 
 a {
@@ -37,11 +39,14 @@ header h1 a:hover {
   margin: 0 30px;
 }
 
-.status {
+.status,.status_contents{
   padding: 10px;
   border-bottom: 2px solid #cccccc;
   margin-bottom: 10px;
+  
 }
+
+
 
 ul.error_list {
   border: 1px solid #ff0000;

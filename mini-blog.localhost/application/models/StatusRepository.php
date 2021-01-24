@@ -68,7 +68,7 @@ class StatusRepository extends DbRepository
   public function fetchByusername()
   {
 
-    $sql = "select user_name from user
+    $sql = "select user_name,icon from user
   ";
     return $this->fetchAll($sql);
   }

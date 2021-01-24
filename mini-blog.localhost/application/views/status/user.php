@@ -19,6 +19,6 @@
 <?php endif; ?>
 <div id="statuses">
   <?php foreach ($statuses as $status) : ?>
-    <?php echo $this->render('status/status', array('status' => $status)); ?>
+    <?php echo $this->render('status/status', array('status' => $status)).'<br>'; ?>
   <?php endforeach; ?>
 </div>

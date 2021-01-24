@@ -13,14 +13,14 @@
 <?php require('style.css');?>
 </style>
 </head>
-<header>
-  <div id="header">
-  <h1><a href="<?php echo $base_url;?>/">Mini Blog</a></h1>
-  </div>
-</header>
+  <header>
+    <div id="header">
+    <h1><a href="<?php echo $base_url;?>/">Mini Blog</a></h1>
+    </div>
+  </header>
 
-<body>
-
+<body >
+<div class='site-width'>
   <div id="id">
 <p>
 <!-- 認証されていたら。。 -->
@@ -43,5 +43,6 @@
   ?>
   </div>
 </body>
+  </div>
 </html>
 
