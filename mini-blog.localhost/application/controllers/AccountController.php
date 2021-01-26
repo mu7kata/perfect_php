@@ -207,4 +207,18 @@ class AccountController extends Controller
 
     return $this->redirect('/account');
   }
+
+  public function editAction()
+  {
+ 
+    $user = $this->session->get('user');
+    $edit_content=$this->db_manager->get('User')->fetchByUserName($user['user_name']);
+   if(!empty($_POST)){
+     $this->db_manager->get('User')->update($user['user_name'],$_POST['user_name'],$_POST['icon']);
+
+     return $this->redirect('/');
+    }
+
+    return $this->render(array('edit_content'=>$edit_content,));
+  }
 }
