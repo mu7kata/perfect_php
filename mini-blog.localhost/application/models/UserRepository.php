@@ -67,9 +67,11 @@ class UserRepository extends DbRepository
     $stmt = $this->fetchAll(
       $sql,
       array(
+        ':edit_name' => $edit_name,
+        ':edit_image' => $edit_image,
+
+        
         ':user_name' => $user_name,
-        'edit_name' => $edit_name,
-        'edit_image' => $edit_image
       )
     );
 

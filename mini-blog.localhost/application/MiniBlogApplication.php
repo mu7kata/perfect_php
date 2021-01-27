@@ -42,9 +42,14 @@ class MiniBlogApplication extends Application
       '/account'
       => array('controller' => 'account', 'action' => 'index'),
 
+      '/account/post'
+      => array('controller' => 'account', 'action' => 'post'),
+
       // /accountでアクセスするとindexアクションを呼び出す
       '/account/:action'
       => array('controller' => 'account'),
+
+
       '/follow'
       => array('controller' => 'account', 'action' => 'follow'),
     );

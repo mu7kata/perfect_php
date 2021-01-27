@@ -60,9 +60,9 @@ class View
         $content = ob_get_clean();
         //バッファに出力された値を取得する。$fileのこと？
    
-        $setLayout=$this->setLayoutVar('hhh',$statusee[0]['user_name']);
+    
         if ($_layout) {$content = $this->render($_layout,
-            array_merge($this->layout_variables, array('_content' => $content,'_setLayout'=>$setLayout)));
+            array_merge($this->layout_variables, array('_content' => $content,)));
             
         }
         

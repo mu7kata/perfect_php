@@ -1,14 +1,13 @@
 <?php 
 
 $this->setlayoutVar('title','プロフィール編集') ;
-echo $maru;
 
+echo $statuses
 
 ?>
 
 <h2>プロフィールを編集</h2>
-
-<form action="<?php echo $base_url;?>/account" method="post">
+<form action="<?php echo $base_url;?>/account/post" method="post">
 
 アカウント名<br>
 <input type="text" name="user_name" value="<?php echo $edit_content['user_name']?>"><br>

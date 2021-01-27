@@ -210,15 +210,31 @@ class AccountController extends Controller
 
   public function editAction()
   {
- 
     $user = $this->session->get('user');
     $edit_content=$this->db_manager->get('User')->fetchByUserName($user['user_name']);
-   if(!empty($_POST)){
-     $this->db_manager->get('User')->update($user['user_name'],$_POST['user_name'],$_POST['icon']);
-
-     return $this->redirect('/');
-    }
-
+ 
     return $this->render(array('edit_content'=>$edit_content,));
   }
+
+  public function postAction()
+{
+  if (!$this->request->ispost()) {
+    $this->forward404();
+  }
+  $user = $this->session->get('user');
+  $this->db_manager->get('User')->update($user['user_name'],$_POST['user_name'],$_POST['icon']);
+  // $_SESSION['user']['user_name']='iii';
+  return $this->redirect('/');
+
+ 
+
+  $statuses = $this->db_manager->get('Status')
+  ->fetchAllPersonalArchivesByUserId($user['id']);
+
+ 
+
+return $this->render(array(
+  'statuses' => $statuses,
+), 'index');
+}
 }

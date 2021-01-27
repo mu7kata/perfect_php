@@ -7,11 +7,9 @@
     <title><?php if (isset($title)): echo $this->escape($title) . ' - ';
         endif; ?>Mini Blog</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="/css/style.css 
+    <link rel="stylesheet" type="text/css" media="screen" href="/study_localhost/mini-blog.localhost/application/views/style.css 
 " />
-<style>
-<?php require('style.css');?>
-</style>
+
 </head>
   <header>
     <div id="header">
