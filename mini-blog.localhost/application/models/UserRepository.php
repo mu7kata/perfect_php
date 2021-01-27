@@ -22,7 +22,7 @@ class UserRepository extends DbRepository
     return sha1($password . 'SecretKey');
   }
 
-  //ユーザーIDを元にユーザー情報を取得
+  //ユーザー名を元にユーザー情報を取得
   public function fetchByUserName($user_name)
   {
     $sql = "SELECT * FROM user WHERE user_name =:user_name";
@@ -31,7 +31,7 @@ class UserRepository extends DbRepository
     return $this->fetch($sql, array(':user_name' => $user_name));
   }
 
-  //ユーザーIDを元にレコード（行）件数を取得、ユーザー情報の存在を確認するためのメソッド？
+  //ユーザー名を元にレコード（行）件数を取得、ユーザー情報の存在を確認するためのメソッド？
   public function isUniqueUserName($user_name)
   {
     $sql = "SELECT COUNT(id) as count FROM user WHERE user_name = :user_name ";
@@ -62,15 +62,11 @@ class UserRepository extends DbRepository
     icon=:edit_image 
     where user_name=:user_name;
     ";
-
-
-    $stmt = $this->fetchAll(
+    $stmt = $this->execute(
       $sql,
       array(
         ':edit_name' => $edit_name,
         ':edit_image' => $edit_image,
-
-        
         ':user_name' => $user_name,
       )
     );
@@ -81,6 +77,6 @@ class UserRepository extends DbRepository
     } else {
       $maru = '失敗';
     }
-    return  $maru; 
+    return  $maru;
   }
 }

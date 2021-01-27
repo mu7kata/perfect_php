@@ -9,14 +9,14 @@ class StatusController extends Controller
     $user = $this->session->get('user');
 
     $statuses = $this->db_manager->get('Status')
-    ->fetchAllByUserId($user['id']);
- 
+      ->fetchAllByUserId($user['id']);
+
 
     return $this->render(array(
       'statuses' => $statuses,
       'body' => '',
       '_token' => $this->generateCsrfToken('status/post'),
-   
+
     ));
   }
 
@@ -70,11 +70,11 @@ class StatusController extends Controller
   public function userAction($params)
   {
     //外部データからユーザ情報を取得
-   
+
     $user = $this->db_manager->get('user')
-    ->fetchByUserName($params['user_name']);
-      $follower = $this->db_manager->get('Following')->Follower($user['id']);
-      $follow=$this->db_manager->get('Following')->Follow($user['id']);
+      ->fetchByUserName($params['user_name']);
+    $follower = $this->db_manager->get('Following')->Follower($user['id']);
+    $follow = $this->db_manager->get('Following')->Follow($user['id']);
     //ユーザーの存在を確認数
     if (!$user) {
       $this->forward404();
@@ -88,26 +88,27 @@ class StatusController extends Controller
       $my = $this->session->get('user');
 
       //自分自身のフォローは表示しないようにする
-      //外部からのデータ（ユーザーID）が自分のものではなかったら。フォロー情報の取得（存在してるかTRUE or FALSE）
+      //外部からのデータ（ユーザー名）が自分のものではなかったら。フォロー情報の取得（存在してるかTRUE or FALSE）
       if ($my['id'] !== $user['id']) {
         $following = $this->db_manager
           ->get('Following')
-          ->isFollowing($my['id'], $user['id']);//フォローしている値を抽出
-      }}
+          ->isFollowing($my['id'], $user['id']); //フォローしている値を抽出
+      }
+    }
 
-      $user_status = $this->db_manager->get('Status')
+    $user_status = $this->db_manager->get('Status')
       ->fetchAllPersonalArchivesByUserId($user['id']);
 
     return $this->render(array(
       'user' => $user,
       'statuses' => $statuses,
       'following' => $following,
-       '_token' => $this->generateCsrfToken('account/follow'),
-       'follower' => $follower,
-       'follow'=>$follow,
-       'user_status'=>$user_status,
-       
-      ));
+      '_token' => $this->generateCsrfToken('account/follow'),
+      'follower' => $follower,
+      'follow' => $follow,
+      'user_status' => $user_status,
+
+    ));
   }
   public function showAction($params)
   {
@@ -121,21 +122,23 @@ class StatusController extends Controller
     return $this->render(array('status' => $status));
   }
 
-  public function usersAction(){
-  
+  public function usersAction()
+  {
+
     $users = $this->db_manager->get('Status')
-    ->fetchByusername();
+      ->fetchByusername();
 
     if (!$users) {
       $this->forward404();
     }
     return $this->render(array('users' => $users));
   }
-// 修正箇所-----------------------------------------------------------------------
-public function followAction($params){
+  // 修正箇所-----------------------------------------------------------------------
+  public function followAction($params)
+  {
 
-  $follower_name=$this->db_manager->get('Status')
-  ->fetchByFollower($params['id'],$params[1]);
-  return $this->render(array('follower_name'=>$follower_name,'params'=>$params));
-}
+    $follower_name = $this->db_manager->get('Status')
+      ->fetchByFollower($params['id'], $params[1]);
+    return $this->render(array('follower_name' => $follower_name, 'params' => $params));
+  }
 }

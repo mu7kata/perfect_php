@@ -2,7 +2,6 @@
 
 $this->setlayoutVar('title','プロフィール編集') ;
 
-echo $statuses
 
 ?>
 

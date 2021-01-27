@@ -39,8 +39,6 @@ class AccountController extends Controller
 
     if (!strlen($user_name)) {
       $errors[] = 'ユーザIDを入力してください';
-    } else if (!preg_match('/^\w{3,20}$/', $user_name)) {
-      $errors[] = 'ユーザIDは半角英数字およびアンダースコアを3 ～ 20 文字以内で入力してください';
     } else if (!$this->db_manager->get('User')->isUniqueUserName($user_name)) {
       $errors[] = 'ユーザIDは既に使用されています';
     }
@@ -131,7 +129,7 @@ class AccountController extends Controller
     $errors = array();
 
     if (!strlen($user_name)) {
-      $errors[] = 'ユーザーIdを入力しろ';
+      $errors[] = 'ユーザー名を入力しろ';
     }
 
     if (!strlen($password)) {
@@ -211,30 +209,24 @@ class AccountController extends Controller
   public function editAction()
   {
     $user = $this->session->get('user');
-    $edit_content=$this->db_manager->get('User')->fetchByUserName($user['user_name']);
- 
-    return $this->render(array('edit_content'=>$edit_content,));
+    $edit_content = $this->db_manager->get('User')->fetchByUserName($user['user_name']);
+
+    return $this->render(array('edit_content' => $edit_content,));
   }
 
   public function postAction()
-{
-  if (!$this->request->ispost()) {
-    $this->forward404();
+  {
+    if (!$this->request->ispost()) {
+      $this->forward404();
+    }
+    $user = $this->session->get('user');
+    $post_user_name = $this->request->getPost('user_name');
+    $post_icon = $this->request->getPost('icon');
+    $this->db_manager->get('User')->update($user['user_name'], $post_user_name, $post_icon);
+
+    $_SESSION['user']['user_name'] = $post_user_name;
+    return $this->redirect('/account/index');
+    return $this->render(array(), 'index');
   }
-  $user = $this->session->get('user');
-  $this->db_manager->get('User')->update($user['user_name'],$_POST['user_name'],$_POST['icon']);
-  // $_SESSION['user']['user_name']='iii';
-  return $this->redirect('/');
-
- 
-
-  $statuses = $this->db_manager->get('Status')
-  ->fetchAllPersonalArchivesByUserId($user['id']);
-
- 
-
-return $this->render(array(
-  'statuses' => $statuses,
-), 'index');
 }
-}
+

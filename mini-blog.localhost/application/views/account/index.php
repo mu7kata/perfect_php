@@ -1,13 +1,11 @@
 <?php 
 
 $this->setlayoutVar('title','アカウント') ;
-$icon=$user_statuses[1]['icon'];
-
+$icon=array_shift(array_column($user_statuses,'icon'));
 
 ?>
 <h2>マイアカウント</h2>
 <img src="/study_localhost/mini-blog.localhost/application/<?php echo $icon;?>" alt="k">
-
 <p>
 アカウント名：
 <a href="<?php echo $base_url;?>/user/<?php echo $this->escape($user['user_name']);?>">
