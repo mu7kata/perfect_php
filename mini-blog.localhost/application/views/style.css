@@ -13,13 +13,18 @@ a {
 }
 
 header {
-  background-color: #dddddd;
-  padding: 20px;
-  border-bottom: 3px solid #cccccc;
+    padding: 30px 4% 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color:#BAD3FF;
+    display: flex;
+    align-items: center;
 }
 
 header h1 {
   margin: 0;
+  padding-right:30px ;
 }
 
 header h1 a {
@@ -37,6 +42,7 @@ header h1 a:hover {
 
 #main {
   margin: 0 30px;
+  padding-top:100px ;
 }
 
 .status,.status_contents{

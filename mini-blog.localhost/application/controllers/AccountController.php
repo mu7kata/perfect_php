@@ -201,10 +201,14 @@ class AccountController extends Controller
       && !$following_repository->isFollowing($user['id'], $follow_user['id'])
     ) {
       $following_repository->insert($user['id'], $follow_user['id']);
+    }else{
+      $following_repository->delete($user['id'], $follow_user['id']);
     }
 
     return $this->redirect('/account');
   }
+
+ 
 
   public function editAction()
   {

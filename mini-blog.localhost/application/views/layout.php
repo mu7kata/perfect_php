@@ -13,12 +13,8 @@
 </head>
   <header>
     <div id="header">
-    <h1><a href="<?php echo $base_url;?>/">Mini Blog</a></h1>
+    <h1><a href="<?php echo $base_url;?>/">掲示板</a></h1>
     </div>
-  </header>
-
-<body >
-<div class='site-width'>
   <div id="id">
 <p>
 <!-- 認証されていたら。。 -->
@@ -35,6 +31,10 @@
 <?php endif;?>
 </p>
 </div>
+  </header>
+
+<body >
+<div class='site-width'>
   <div class="" id="main">
   <?php
   echo $_content;

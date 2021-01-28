@@ -12,6 +12,16 @@ class FollowingRepository extends DbRepository
     ));
   }
 
+  public function delete($user_id,$following_id)
+  {
+    $sql = "DELETE FROM following WHERE following_id=:following_id and user_id=:user_id";
+
+    $stmt = $this->execute($sql, array(
+      ':user_id' => $user_id,
+      'following_id' => $following_id,
+    ));
+  }
+
   public function isFollowing($user_id, $following_id)
   {
     $sql = "
@@ -19,7 +29,10 @@ class FollowingRepository extends DbRepository
     FROM following
     WHERE user_id = :user_id
     AND following_id = :following_id
+
     ";
+
+   
 
     $row = $this->fetch($sql, array(
       ':user_id' => $user_id,

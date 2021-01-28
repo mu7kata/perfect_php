@@ -11,7 +11,6 @@ class StatusController extends Controller
     $statuses = $this->db_manager->get('Status')
       ->fetchAllByUserId($user['id']);
 
-
     return $this->render(array(
       'statuses' => $statuses,
       'body' => '',
@@ -136,9 +135,9 @@ class StatusController extends Controller
   // 修正箇所-----------------------------------------------------------------------
   public function followAction($params)
   {
-
     $follower_name = $this->db_manager->get('Status')
       ->fetchByFollower($params['id'], $params[1]);
     return $this->render(array('follower_name' => $follower_name, 'params' => $params));
   }
+
 }
